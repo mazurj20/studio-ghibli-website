@@ -3,7 +3,7 @@ let filmUrl = "https://ghibliapi.herokuapp.com/films"
 let filmImages = {}
 let imageArray = [
     "https://cdn.coil.com/images/KQKt1nlBQB-ArZLCDQkugQ.jpg",
-    "background-image: url(https://static01.nyt.com/images/2019/01/04/arts/04grave1/grave1-videoSixteenByNineJumbo1600.jpg",
+    "https://static01.nyt.com/images/2019/01/04/arts/04grave1/grave1-videoSixteenByNineJumbo1600.jpg",
     "https://www.denofgeek.com/wp-content/uploads/2012/11/totoro-main.jpg?fit=640%2C380",
     "https://i.guim.co.uk/img/media/aa5f12bac3ba95322c58929eab0303262dc20340/321_175_1509_905/master/1509.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=242ea5b7b0adae22bb80a3161a6c337f",
     "https://www.indiewire.com/wp-content/uploads/2016/12/princess-mononoke_592x299-7.jpg",
@@ -14,18 +14,41 @@ let imageArray = [
 
 ]
 
+let imageContainer = document.querySelector(".imageContainer")
+
+
+
 fetch(filmUrl)
     .then(res => res.json())
     .then(res => {
+        
     for (i=0;i<9;i++) {
        filmImages[`${res[i].id}`] = {}
     }
         for (let i=0;i<9;i++) {
             filmImages[`${res[i].id}`].img = imageArray[i]
+            let imageClass = document.createElement("div")
+            imageClass.classList.add("image")
+            imageClass.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
+            imageContainer.appendChild(imageClass)
         }
     
+        
+        
+        
+        
     
-    })
+})
+
+
+    
+
+    
+
+
+
+
+
 
 console.log(filmImages)
 
