@@ -14,12 +14,45 @@ header {
     justify-content: space-between;
 }
 
+button {
+    position: absolute;
+    
+    
+
+}
+
+.buttonClass {
+    line-height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 .imageContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 .image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width : 100%;
     height : 30vh;
 }
+
+
+
+
+@media only screen and (max-width: 375px) {
+    .imageContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+  }
+
+
