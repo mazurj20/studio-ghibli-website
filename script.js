@@ -32,7 +32,12 @@ fetch(filmUrl)
             filmImages[`${res[i].id}`].img = imageArray[i]
             let eachFilm = document.createElement("div")
             eachFilm.classList.add("eachFilm")
-            let imageClass = document.createElement("div")
+            let imageLink = document.createElement("a")
+            imageLink.setAttribute("href","https://www.google.com/")
+            imageLink.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
+            imageContainer.appendChild(eachFilm)
+            eachFilm.appendChild(imageLink)
+            /*let imageClass = document.createElement("div")
             imageClass.classList.add("image")
             imageClass.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
             imageContainer.appendChild(eachFilm)
@@ -42,7 +47,7 @@ fetch(filmUrl)
             let button = document.createElement("button")
             button.innerText = "More Info"
             buttonClass.appendChild(button)
-            eachFilm.appendChild(buttonClass)
+            eachFilm.appendChild(buttonClass) */
             
         }
     })

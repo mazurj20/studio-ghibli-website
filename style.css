@@ -12,37 +12,48 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 1%;
 }
 
-button {
+/* button {
     position: absolute;
     
     
 
-}
+} */
 
-.buttonClass {
+/* .buttonClass {
     line-height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-}
+} */
 
 .imageContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.image {
+a {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 30vh;
+}
+
+/* .image {
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width : 100%;
     height : 30vh;
-}
+} */
 
 
 
