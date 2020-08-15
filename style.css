@@ -1,5 +1,12 @@
 
+.modal {
+    background-color: rgba(0,0,0,.5);
+    visibility: hidden;
+}
 
+.modalToggle {
+    visibility: visible;
+}
 
 body {
     margin: 0;

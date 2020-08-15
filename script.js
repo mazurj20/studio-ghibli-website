@@ -24,7 +24,7 @@ let imageContainer = document.querySelector(".imageContainer")
 fetch(filmUrl)
     .then(res => res.json())
     .then(res => {
-        console.log(res)
+        
     for (i=0;i<imageArray.length;i++) {
        filmImages[`${res[i].id}`] = {}
     }
@@ -33,7 +33,7 @@ fetch(filmUrl)
             let eachFilm = document.createElement("div")
             eachFilm.classList.add("eachFilm")
             let imageLink = document.createElement("a")
-            imageLink.setAttribute("href","https://www.google.com/")
+            imageLink.setAttribute("href","#")
             imageLink.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
             imageContainer.appendChild(eachFilm)
             eachFilm.appendChild(imageLink)
@@ -53,15 +53,21 @@ fetch(filmUrl)
     })
 
 
-    
+    let modal = document.querySelector(".modal")
+   // let eachFilm = document.querySelectorAll(".eachFilm")
+    let a = document.querySelectorAll("a")
 
-    
+    let toggleModal = () => {
+        modal.classList.toggle("modalToggle")
+        console.log(modal.classList)
+    }
+
+
+a.forEach(pic => {
+    pic.addEventListener("click",toggleModal)
+})
 
 
 
-
-
-
-console.log(filmImages)
 
 
