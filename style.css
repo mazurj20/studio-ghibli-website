@@ -6,14 +6,15 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modalContainer {
     background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,50%);
+    margin: 10vw;
 
 }
 
@@ -66,23 +67,39 @@ a {
     height: 30vh;
 }
 
-/* .image {
+
+
+.textHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.picHeader{
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width : 100%;
-    height : 30vh;
-} */
+    display: block;
+    width: 100%;
+    height: 30vh;
+}
 
-
-
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 @media only screen and (max-width: 375px) {
     .imageContainer {
         display: grid;
         grid-template-columns: 1fr 1fr;
     
+    }
+
+    .picHeader {
+        height: 15vh;
     }
   }
 

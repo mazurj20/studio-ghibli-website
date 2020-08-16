@@ -18,13 +18,19 @@ let imageArray = [
 ]
 
 let imageContainer = document.querySelector(".imageContainer")
-
-
+let picHeader = document.querySelector(".picHeader")
+let textHeader = document.querySelector(".textHeader")
+let description = document.querySelector("p")
+let footer = document.querySelector(".footer")
+let title = document.querySelector("h1")
+let director = document.querySelector("h2")
+let score = document.querySelector("h3")
+let year = document.querySelector("h4")
 
 fetch(filmUrl)
     .then(res => res.json())
     .then(res => {
-        
+        console.log(res)
     for (i=0;i<imageArray.length;i++) {
        filmImages[`${res[i].id}`] = {}
     }
@@ -38,14 +44,28 @@ fetch(filmUrl)
             imageLink.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
             imageContainer.appendChild(eachFilm)
             eachFilm.appendChild(imageLink)
+
             let pic = document.querySelector(`#picture${i}`)
             pic.addEventListener("click",toggleModal = () => {
+            picHeader.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
+            title.innerText = res[i].title
+            director.innerText = res[i].director
+            description.innerText = res[i].description
+            score.innerText = res[i].rt_score
+            year.innerText = res[i].release_date
+
             modal.classList.toggle("modalToggle")
-                
+
+            
             })
             
         }
-
+        window.addEventListener("click", (e) =>{
+    
+            if (e.target === modal) {
+                toggleModal()
+            }
+        })
         
     })
 
