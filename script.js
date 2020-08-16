@@ -11,7 +11,7 @@ let imageArray = [
     "https://images.amcnetworks.com/ifccenter.com/wp-content/uploads/2015/12/POM_POKO_03_1004821.jpg",
     "https://d17389e216ygm.cloudfront.net/wp-content/uploads/CE_whisperoftheheart-1024x576.jpg",
     "https://www.indiewire.com/wp-content/uploads/2016/12/princess-mononoke_592x299-7.jpg",
-    "https://lh3.googleusercontent.com/proxy/COo8qNrGD3cz3KG-qPZRRFZJ2h2bSsF2B0lyTDgFOlG7iTkD8WjRbII2On0afJn3FtGWc2270XsnqBm3FZC_eUkUCWXO_dvDNM141zblsGyWrl0hJK5GSA6cUg",
+    "https://lh3.googleusercontent.com/proxy/b3FuBaZznjKuhpKeTHOJsiu46tPaPWeirOcSfBOWXVBzWkONwvY-c_NrLlAIh5uj24Z8P0UxkLwJ2UF9godN1aWevAIAOzPpfbwqDDshEXXPJA",
     "https://www.intofilm.org/intofilm-production/2111/scaledcropped/1170x658/resources/2111/spirited-away-ep-buena-vista.jpg",
     "https://images.amcnetworks.com/ifccenter.com/wp-content/uploads/2019/12/cat_07s16c52_t2.0246.jpg"
 
@@ -34,39 +34,34 @@ fetch(filmUrl)
             eachFilm.classList.add("eachFilm")
             let imageLink = document.createElement("a")
             imageLink.setAttribute("href","#")
+            imageLink.setAttribute("id",`picture${i}`)
             imageLink.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
             imageContainer.appendChild(eachFilm)
             eachFilm.appendChild(imageLink)
-            /*let imageClass = document.createElement("div")
-            imageClass.classList.add("image")
-            imageClass.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
-            imageContainer.appendChild(eachFilm)
-            eachFilm.appendChild(imageClass)
-            let buttonClass = document.createElement("div")
-            buttonClass.classList.add("buttonClass")
-            let button = document.createElement("button")
-            button.innerText = "More Info"
-            buttonClass.appendChild(button)
-            eachFilm.appendChild(buttonClass) */
+            let pic = document.querySelector(`#picture${i}`)
+            pic.addEventListener("click",toggleModal = () => {
+            modal.classList.toggle("modalToggle")
+                
+            })
             
         }
+
+        
     })
 
 
     let modal = document.querySelector(".modal")
-   // let eachFilm = document.querySelectorAll(".eachFilm")
-    let a = document.querySelectorAll("a")
-
-    let toggleModal = () => {
-        modal.classList.toggle("modalToggle")
-        console.log(modal.classList)
-    }
 
 
-a.forEach(pic => {
+  
+
+    
+
+
+/* link.forEach(pic => {
+    
     pic.addEventListener("click",toggleModal)
-})
-
+}) */
 
 
 
