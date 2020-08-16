@@ -73,6 +73,12 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 1%;
+}
+
+.description {
+    padding: 1%;
+    text-align: justify;
 }
 
 .picHeader{
@@ -89,6 +95,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 1%;
 }
 
 @media only screen and (max-width: 375px) {

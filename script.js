@@ -61,7 +61,7 @@ fetch(filmUrl)
             
         }
         window.addEventListener("click", (e) =>{
-    
+            e.preventDefault()
             if (e.target === modal) {
                 toggleModal()
             }
