@@ -27,7 +27,9 @@
     padding: 1%;
     cursor: pointer;
     font-size: 2em;
+
 }
+
 
 body {
     margin: 0;
@@ -50,6 +52,7 @@ header {
 .rightHeader {
     font-family: monospace;
     margin-top: 2%;
+    text-transform: uppercase;
 }
 
 .imageContainer {
@@ -110,9 +113,18 @@ a {
 
 .director {
     font-size: 3vw;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Caveat', cursive;
     
 }
+
+h3{
+    font-family: 'Gochi Hand', cursive;
+}
+
+h4 {
+    font-family: 'Gochi Hand', cursive;
+}
+
 
 @media only screen and (max-width: 375px) {
     .imageContainer {

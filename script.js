@@ -1,3 +1,5 @@
+// ANCHOR fixing image issue
+
 let filmUrl = "https://ghibliapi.herokuapp.com/films"
 
 let filmImages = {}
@@ -11,7 +13,7 @@ let imageArray = [
     "https://images.amcnetworks.com/ifccenter.com/wp-content/uploads/2015/12/POM_POKO_03_1004821.jpg",
     "https://d17389e216ygm.cloudfront.net/wp-content/uploads/CE_whisperoftheheart-1024x576.jpg",
     "https://www.indiewire.com/wp-content/uploads/2016/12/princess-mononoke_592x299-7.jpg",
-    "https://lh3.googleusercontent.com/proxy/b3FuBaZznjKuhpKeTHOJsiu46tPaPWeirOcSfBOWXVBzWkONwvY-c_NrLlAIh5uj24Z8P0UxkLwJ2UF9godN1aWevAIAOzPpfbwqDDshEXXPJA",
+    "https://www.japansociety.org/resources/legacy/event/yamadas_xl.jpg",
     "https://www.intofilm.org/intofilm-production/2111/scaledcropped/1170x658/resources/2111/spirited-away-ep-buena-vista.jpg",
     "https://images.amcnetworks.com/ifccenter.com/wp-content/uploads/2019/12/cat_07s16c52_t2.0246.jpg"
 
@@ -34,12 +36,13 @@ let modal = document.querySelector(".modal")
 fetch(filmUrl)
     .then(res => res.json())
     .then(res => {
-        console.log(res)
+    // creating object with ids and image urls
     for (i=0;i<imageArray.length;i++) {
        filmImages[`${res[i].id}`] = {}
     }
         for (let i=0;i<imageArray.length;i++) {
             filmImages[`${res[i].id}`].img = imageArray[i]
+           // ANCHOR creating divs and background images for main page
             let eachFilm = document.createElement("div")
             eachFilm.classList.add("eachFilm")
             let imageLink = document.createElement("a")
@@ -49,20 +52,20 @@ fetch(filmUrl)
             imageContainer.appendChild(eachFilm)
             eachFilm.appendChild(imageLink)
 
+            //ANCHOR creating modal for each image
             let pic = document.querySelector(`#picture${i}`)
             pic.addEventListener("click",toggleModal = () => {
             picHeader.style.backgroundImage = `url(${filmImages[`${res[i].id}`].img})`
             title.innerText = res[i].title
             director.innerText = res[i].director
             description.innerText = res[i].description
-            score.innerText = ` 🍅${res[i].rt_score}`
+            score.innerText = ` 🍅${res[i].rt_score}%`
             year.innerText = res[i].release_date
-
             modal.classList.toggle("modalToggle")
+        })
 
             
-            })
-            
+        //ANCHOR click outside the modal to exit
         }
         window.addEventListener("click", (e) =>{
             e.preventDefault()
@@ -70,7 +73,7 @@ fetch(filmUrl)
                 toggleModal()
             }
         })
-
+        //ANCHOR click X to exit modal
         close.addEventListener("click",toggleModal)
         
 
@@ -80,9 +83,7 @@ fetch(filmUrl)
 
     
 
-  
 
-    
 
 
 
