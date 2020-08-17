@@ -14,12 +14,19 @@
 .modalContainer {
     background-color: rgb(255, 255, 255);
     position: absolute;
-    margin: 10vw;
+    margin: 13vw;
 
 }
 
 .modalToggle {
     visibility: visible;
+}
+
+.close {
+    color: lightslategray;
+    padding: 1%;
+    cursor: pointer;
+    font-size: 2em;
 }
 
 body {
@@ -36,21 +43,14 @@ header {
     padding: 1%;
 }
 
-/* button {
-    position: absolute;
-    
-    
+.leftHeader {
+    font-family: 'Rajdhani', sans-serif;;
+}
 
-} */
-
-/* .buttonClass {
-    line-height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-} */
+.rightHeader {
+    font-family: monospace;
+    margin-top: 2%;
+}
 
 .imageContainer {
     display: grid;
@@ -74,11 +74,15 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 1%;
+    margin-top: -5%;
+    margin-bottom: -11%;
 }
 
 .description {
-    padding: 1%;
+    padding: 4%;
     text-align: justify;
+    font-family: 'Lato', sans-serif;
+    
 }
 
 .picHeader{
@@ -98,6 +102,18 @@ a {
     padding: 1%;
 }
 
+.title {
+    font-size: 2.6vw;
+    font-family: 'Rajdhani', sans-serif;
+    
+}
+
+.director {
+    font-size: 3vw;
+    font-family: 'Rajdhani', sans-serif;
+    
+}
+
 @media only screen and (max-width: 375px) {
     .imageContainer {
         display: grid;
@@ -107,6 +123,15 @@ a {
 
     .picHeader {
         height: 15vh;
+    }
+
+    .description {
+        margin-top: -10%;
+    margin-bottom: -10%;
+    }
+
+    .modalContainer {
+        margin: 13vw;
     }
   }
 

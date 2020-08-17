@@ -26,6 +26,10 @@ let title = document.querySelector("h1")
 let director = document.querySelector("h2")
 let score = document.querySelector("h3")
 let year = document.querySelector("h4")
+let close = document.querySelector(".close")
+let hover = document.querySelectorAll(".eachFilm")
+let modal = document.querySelector(".modal")
+
 
 fetch(filmUrl)
     .then(res => res.json())
@@ -51,7 +55,7 @@ fetch(filmUrl)
             title.innerText = res[i].title
             director.innerText = res[i].director
             description.innerText = res[i].description
-            score.innerText = res[i].rt_score
+            score.innerText = ` 🍅${res[i].rt_score}`
             year.innerText = res[i].release_date
 
             modal.classList.toggle("modalToggle")
@@ -66,22 +70,22 @@ fetch(filmUrl)
                 toggleModal()
             }
         })
+
+        close.addEventListener("click",toggleModal)
         
+
+
     })
 
 
-    let modal = document.querySelector(".modal")
-
+    
 
   
 
     
 
 
-/* link.forEach(pic => {
-    
-    pic.addEventListener("click",toggleModal)
-}) */
+
 
 
 
