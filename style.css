@@ -43,7 +43,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     padding: 1%;
+    background-color: rgba(104, 136, 179, 0.4);
 }
+
 
 .leftHeader {
     font-family: 'Rajdhani', sans-serif;;
@@ -123,6 +125,14 @@ h3{
 
 h4 {
     font-family: 'Gochi Hand', cursive;
+}
+
+.eachFilm {
+    transition: .3s;
+}
+
+.eachFilm:hover {
+    opacity: .5;
 }
 
 
